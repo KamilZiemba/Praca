@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Test2_Git.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()

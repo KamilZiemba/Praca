@@ -54,9 +54,9 @@ namespace Test2_Git
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "246551246144505",
+               appSecret: "a3a200c92e8bf8b4c502ac9e040cb61c");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
