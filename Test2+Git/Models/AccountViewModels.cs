@@ -65,6 +65,14 @@ namespace Test2_Git.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Imię")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Nazwisko")]
+        public string LastName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Adres e-mail")]
         public string Email { get; set; }
@@ -79,6 +87,8 @@ namespace Test2_Git.Models
         [Display(Name = "Potwierdź hasło")]
         [Compare("Password", ErrorMessage = "Hasło i jego potwierdzenie są niezgodne.")]
         public string ConfirmPassword { get; set; }
+        public bool Gospodarstwo { get; set; }
+
     }
 
     public class ResetPasswordViewModel
