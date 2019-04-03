@@ -1,9 +1,12 @@
 namespace Test2_Git.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Test2_Git.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Test2_Git.Models.ApplicationDbContext>
     {
@@ -26,6 +29,19 @@ namespace Test2_Git.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            string[] roleNames = { "Admin", "Klient" };
+            IdentityResult roleResult;
+            foreach (var roleName in roleNames)
+            {
+                if (!RoleManager.RoleExists(roleName))
+                {
+                    roleResult = RoleManager.Create(new IdentityRole(roleName));
+                }
+            }
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            UserManager.AddToRole("UserID", "Admin");
         }
     }
 }
