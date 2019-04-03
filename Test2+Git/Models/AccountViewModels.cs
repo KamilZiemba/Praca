@@ -8,6 +8,9 @@ namespace Test2_Git.Models
         [Required]
         [Display(Name = "Adres e-mail")]
         public string Email { get; set; }
+
+        public string FullName { get; set; }
+        public bool Gospodarstwo { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -65,12 +68,8 @@ namespace Test2_Git.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Imię")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [Display(Name = "Nazwisko")]
-        public string LastName { get; set; }
+        [Display(Name = "Imię i nazwisko")]
+        public string FullName { get; set; }
 
         [Required]
         [EmailAddress]

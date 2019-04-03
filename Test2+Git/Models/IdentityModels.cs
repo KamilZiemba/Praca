@@ -11,10 +11,7 @@ namespace Test2_Git.Models
     public class ApplicationUser : IdentityUser
     {
         [Display(Name = "First name"), Required]
-        public string FirstName { get; set; }
-
-        [Display(Name = "Last name"), Required]
-        public string LastName { get; set; }
+        public string FullName { get; set; }
 
         public bool Gospodarstwo { get; set; }
 
